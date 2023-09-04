@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+    <body>
+        <canvas id = "mycanvas" width = "600" height = "400" style = "border:3px solid">
+        </canvas>
+        <script type = "text/javascript">
+            var ctx = document.getElementById("mycanvas");
+            var myContext = ctx.getContext("2d");
+            //사각형 선아나
+            myContext.beginPath();
+            myContext.strokeStyle = "rgb(0,0,255)";
+            myContext.strokeRect(10, 10, 100, 100);
+            //사각형 내부를 채움
+            myContext.fillStyle = "lavenderblush";
+            myContext.fillRect(150, 10, 100, 100);
+
+            //삼각형 내부 채움
+            myContext.moveTo(80,120);
+            myContext.lineTo(20,240);
+            myContext.lineTo(140,240);
+            myContext.lineTo(80,120);
+            myContext.fillStyle = "darkviolet";
+            myContext.fill();
+
+            //원 내부 채움
+            myContext.arc(200, 200, 50, 0, 2*Math.PI)
+            myContext.fillStyle = "lavenderblush";
+            myContext.fill()
+        </script>
+    </body>
+</html>
+

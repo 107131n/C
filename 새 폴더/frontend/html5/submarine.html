@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+        <title>Submarine</title>
+        <style>
+            body{
+                background-color: rgba(0, 0, 0, 0);
+                margin:0px;
+            }
+            canvas{
+                background-color: #0099FF;
+            }
+        </style>
+    </head>
+    <body>
+        <canvas id = "canvas" width = "800" height ="600">
+        </canvas>
+        <script type =  "text/javascript">
+           // 캔버스 객체
+            var canvas;
+           var ctx;
+           var canvasBuffer;
+           var bufferCtx;
+           var threadSpeed = 16;
+           
+           //잠수함
+           var submarine;
+           var sx, sy, sw = 60, sh = 35;
+            //배경이미지
+            var background;
+
+            //장애물
+            var enemy = new Array();
+            var enemyColor = ["red", "blue", "white"];
+            var ellapse = 10;
+
+            //타이머 인스턴스
+            var loopInstance;
+
+            //게임의 상태
+            var STATE_START = false;
+            var STATE_GAMEOVER = false;
+
+            //키 상태
+            var keyPressed = []
+
+            //경과 시간
+            var oldTime
+            var startTime;
+            var totalTime;
+
+            window.addEventListener("load", initialize, false);
+            window.addEventListener("keydown", getKeyDown, false);
+            window.addEventListener("keyup", getKeyUp, false);
+            
+
+        </script>
+    </body>
+</html>
+
+

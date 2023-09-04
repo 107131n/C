@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            <h1><center>베스트셀러</center></h1>
+            <hr>
+            <img src = "sky.jpg">
+            <img src = "sky.jpg">
+            <img src = "sky.jpg">
+
+
+            <script type = "text/javascript">
+                document.write("image 개수 : " + document.images.length +"<br>");
+                
+                for(var i =0; i < document.images.length; i++)
+                {
+                    document.images[i].border = 2+i;
+                    document.images[i].width = "210";
+                    document.images[i].height = "300";
+                }
+                for(var i = 0; i < document.images.length; i++)
+                {
+                    document.write("파일 경로 : " + document.images[i].src + "<br>" );
+                    document.write("넓이 : " + document.images[i].width + "<br>" );
+                    document.write("높이 : " + document.images[i].height + "<br>" );
+                }
+            </script>
+        </body>
+    
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            #box1, #box2, #box3
+            {
+                width: 75px;
+                height: 70px;
+                padding: 5px;
+                margin: 5px;
+            }
+            #box1{background-color: red;}
+            #box2{background-color: green;}
+            #box3{background-color: blue;}
+            #target
+            {
+                width: 500px;
+                height: 200px;
+                padding: 5px;
+                margin: 5px;
+                border: 3px solid;
+                background-color: gray;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>draggable 속성 설정 테스트</h2>
+
+        <div id = "box" ondrop = "drop(event)" ondragover = "dragover(event)">
+        <div id = "box1" draggable ="true" ondragstart = "dragstart(event)"
+                ondragend = "dragend(event)" ondrag = "dragging(event)"></div>
+        <div id="box2" draggable="false"></div>
+        <div id="box3" draggable="false"></div>
+        </div>
+        <div id="target" ondragenter="dragenter(event)" ondragover="dragover(event)"
+                ondragleave="dragleave()"></div>
+        <div id="result"></div>
+        
+        <script type="text/javascript">
+            function dragstart(e)
+            {
+                document.getElementById('result').innerHTML = "드래그 시작";
+                e.dataTransfer.setData("colorbox", e.target.id);           
+            }
+            function dragend(e)
+            {
+                document.getElementById('result').innerHTML = "드래그 끝";
+            }
+            function dragging(e)
+            {
+                document.getElementById('result').innerHTML = "드래그 중";
+            }
+            function dragenter(e)
+            {
+                document.getElementById('result').innerHTML = "영역 진입";
+            }
+            function dragover(e)
+            {
+                document.getElementById('result').innerHTML = "영역 위";
+                e.preventDefault();
+            }
+            function dragleave(e)
+            {
+                document.getElementById('result').innerHTML = "영역 나감";
+            }
+
+            function drop(e)
+            {
+                var id = e.target.getAttribute("id");
+                var data = e.dataTransfer.getData("colorbox");
+                e.target.appendChild(document.getElementById(data));
+                if(id == 'target')
+                {
+                    alert('target에 드롭되었습니다.');
+                }
+                else
+                {
+                    alert('원래 영역에 드롭되었습니다.')
+                }
+                e.preventDefault();
+                
+            }
+
+
+        </script>
+    </body>
+</html>

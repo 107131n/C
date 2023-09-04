@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            <script type = "text/javascript">
+                var newWin;
+                function newOpen()
+                {
+                    newWin = window.open('','','width = 350, height = 600');
+                    newWin.document.open(); 
+                    newWin.document.write("<h1><center>이달의 베스트셀러</center></h1>");
+                    newWin.document.write("<img src = 'sky.jpg' width = 330 height = 460>");
+                    newWin.document.close();
+                }
+                function newClear()
+                {
+                    newWin.document.open();
+                    newWin.document.clear();
+                    newWin.document.close();
+                }
+            </script>
+            <h1> 새 문서 직접 만들기</h1>
+            <button onclick = "newOpen()">새 문서 열기</button>
+            <button onclick = "newClear()">문서 지우기</button>
+        </body>
+    
+</html>

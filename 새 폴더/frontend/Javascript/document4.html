@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            <a href = "#MFC">MFC 시스템 프로그래밍</a><p>
+            <a href = "#API">API 프로그래밍</a><p>
+            <a href = "#C++">C++ 프로그래밍</a><p>
+            <br><br><br><br><br><br><br><br><br><br><br>
+            <a name = "MFC">MFC 시스템 프로그래밍</a><p>
+            <img src = "sky.jpg"><br><br>
+            <a name = "API">API 시스템 프로그래밍</a><p>
+            <img src = "sky.jpg"><br><br>
+            <a name = "C++">C++ 시스템 프로그래밍</a><p>
+            <img src = "sky.jpg"><br><br>
+            <script type = "text/javascript">
+
+                document.write("<h1>anchor의 개수 : " + document.anchors.length + "</h1><p>")
+                for(var i = 0; i< document.anchors.length; i++)
+                {
+                    document.write("<h1>" + document.anchors[i].name + "</h1><br>")
+                }
+                
+               
+            </script>
+            <h1> 새 문서 직접 만들기</h1>
+            <button onclick = "newOpen()">새 문서 열기</button>
+            <button onclick = "newClear()">문서 지우기</button>
+        </body>
+    
+</html>

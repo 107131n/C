@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            <form name = "test" method = "get">
+                <input type = "text" name= "text1" size = "20" value="첫 번째 입력">
+                <input type = "text" name= "text2" size = "10" value="두 번째 입력">
+                <input type = "button" name= "btn1" value="첫 번째 버튼">
+                <input type = "button" name= "btn2" value="두 번째 버튼">
+                </form>
+            <script type = "text/javascript">
+                document.write("name :"+ document.test.name + "<p>");
+                document.write("method :"+ document.test.method + "<p>");
+                document.write("length :"+ document.test.length+ "<p>");
+                
+                for(var i =0; i<document.test.length; i++)
+                {
+                    document.write("elements[x].name : "+ document.test.elements[i].name + "<p>");
+                    document.write("elements[x].value : "+ document.test.elements[i].value + "<p>");
+                }
+            </script>
+        </body>
+     
+</html>

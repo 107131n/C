@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            <script type = "text/javascript">
+            //함수 정의
+                function plus(_a, _b)
+                {
+                    //document.write("더하기: "+(parseInt(_a) + parseInt(_b))+ "<br>");
+                    return ((parseInt(_a) + parseInt(_b)) + "<br>");
+                }
+                function mius(_a, _b)
+                {
+                    //document.write( "빼기: "+(parseInt(_a) - parseInt(_b))+"<br>");
+                    return ((parseInt(_a) - parseInt(_b)) + "<br>");
+                }
+                
+                function multiple(_a, _b)
+                {
+                    //document.write("곱하기: "+(parseInt(_a) * parseInt(_b)+"<br>"));
+                    return ((parseInt(_a) * parseInt(_b)) + "<br>");
+                }
+                
+                function divide(_a, _b)
+                {
+                    //document.write("나누기: "+(parseInt(_a) / parseInt(_b))+"<br>");
+                    return ((parseInt(_a) / parseInt(_b)) + "<br>");
+                }
+            //함수 호출
+                var a = prompt("값을 입력하세요","");
+                var b = prompt("값을 입력하세요","");
+                result = plus(a,b);
+                result2 = mius(a,b);
+                result3 = multiple(a,b);
+                result4 = divide(a,b);
+
+                document.write('<div style="color:red">' + result + '<div>');
+                document.write('<div style="color:blue">' + result2 + '<div>');
+                document.write('<div style="color:green">' + result3 + '<div>');
+                document.write('<div style="color:orange">' + result4 + '<div>');
+
+                //plus(a,b);
+               // mius(a,b);
+               // multiple(a,b);
+               // divide(a,b);
+            </script>
+        </body>
+</html>

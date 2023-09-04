@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            <script type = "text/javascript">
+                var timeID;
+                var count = 0;
+                function timeStart()
+                {
+                    timeID = window.setInterval (function(){
+                        document.getElementById("result").innerHTML = count++;
+
+                    },100);
+                }
+                function timestop()
+                {
+                    window.clearInterval(timeID);
+                }
+            </script>
+            <button onclick = "timestart()">카운드 시작</button>
+            <button onclick = "timestop()">카운트 중지 </button>
+            <h1><div id = "result">  </div></h1>
+        </body>
+</html>

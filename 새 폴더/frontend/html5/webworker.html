@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+    <body>
+        <script type =  "text/javascript">
+            function Available()
+            {
+                if(window.Worker)
+                {
+                    document.getElementById("result").innerHTML = "이 브라우저는 웹애플리케이션을 지원합니다."
+                }
+                else
+                {
+                    document.getElementById("result").innerHTML = "이 브라우저는 웹애플리케이션을 지원하지 않습니다."
+                }
+            }
+            function stopOperation(){
+                    var endTime = new Date()
+                    endTime = endTime.getTime() + 5000;
+                    while(new Date().getTime() < endTime);
+                    document.getElementById("result").innerHTML = "일어날 시간입니다.";
+            }
+            function awake()
+            {
+                    alert("애기야 일어나자~");
+            }
+            function applyWorker()
+            {
+                    worker = new Worker('worker.js')
+                    worker.postMessage('워커가 동작합니다.');
+                    worker.onmessage = function(event)
+                    {
+                        document.getElementById('result').innerHTML = event.data;
+                    }
+                    worker.onerror = function(error)
+                    {
+                        document.getElementById('result').innerHTML +=
+                        "메세지 :" +error.Message + "<br>";
+                        document.getElementById('result').innerHTML +=
+                        "파일 이름 :" + error.filename + "<br>";
+                        document.getElementById('result').innerHTML +=
+                        "줄 넘버 :" + error.lineno + "<br>";
+                    }
+            }
+            function killWorker()
+            {
+                worker.terminate();
+                document.getElementById("result").innerHTML = "워커가 종료되었습니다."
+            }
+            function closeWorker()
+            {
+                worker.postMessage("close");
+            }
+        </script>
+        <button onclick = "Available()"> 웹 워커 지원여부</button><p>
+        <button onclick = "stopOperation()">워커 미적용 수행 </button>
+        <button onclick = "applyWorker()">워커 적용 수행 </button>
+        <button onclick = "awake()" >깨어날 시간</button><p>       
+        <button onclick = "killWorker()">워커 종료</button>
+        <button onclick = "closeWorker()" >워커 내부 종료</button><p>      
+        <div id = "result"></div>
+    </body>
+</html>
+
+

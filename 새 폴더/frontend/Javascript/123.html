@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <form name="test" method="get" action="test.html">
+        아이디 : <input type="text" name = 'id' size = '20' value=""></p>
+        비밀번호 : <input type="password" name = 'pw' size = '20' value=""></p>
+        <input type="submit" name="bt1" value="등록하기" onclick="register()" >
+        <input type="reset" name="bt2" value="다시 작성" onclick="reWriter()" >
+    </form>
+    <script>
+        
+        function register() {
+            document.test.submit();
+            alert('축하');
+        }
+        function reWriter() {
+            document.test.reset();
+            alert('다시 입력하세요');
+        }
+    </script>
+</body>
+</html>

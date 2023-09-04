@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            <script type = "text/javascript">
+                // document.write("<h1>width:"+screen.width + "</h1><p>");
+                // document.write("<h1>height:"+screen.height + "</h1><p>");
+                // document.write("<h1>availWidth:"+screen.availWidth + "</h1><p>");
+                // document.write("<h1>availHeight:"+screen.availHeight + "</h1><p>");
+                
+                for (var name in screen)
+                {
+                    screen[name]
+                    document.write(name + ":" + screen[name] + "<p>");
+                }
+            </script>
+        </body>
+</html>

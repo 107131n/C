@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+    <body>
+        <script type = "text/javascript">
+           var watcherId;
+           function StartPos()
+           {
+                if(navigator.geolocation)
+                {
+                  var option = {enableHighAccuracy:true, timeout:1000};
+                  watcherId = navigator.geolocation.watchPosition(CurPosition, ErrorCallback, options);
+
+                }
+                function CurPositon(position)
+                {
+                    var lat = position.coords.latitude;
+                    var lng = position.coords.longitude;
+                    document.getElementById("result").innerHTML = 
+                    "위도 : " + lat +
+                    "경도 : " + lng;
+                }        
+                function ErrorCallback(error)
+                {
+                    switch(error.code)
+                    {
+                        case error.PERMISSION_DENIED:
+                            document.getElementById("result").innerHTML = 
+                            "현재 위치 정보에 대한 접근 권한이 없습니다.";
+                            break;
+                        case error.POSITION_UNAVAILABLE:
+                        document.getElementById("result").innerHTML = 
+                            "현재 위치 정보를 구할 수 없습니다.";
+                            break;
+                        case error.TIMEOUT:
+                        document.getElementById("result").innerHTML = 
+                            "시간 제한을 초과했습니다.";
+                            break;
+                    }
+
+                }
+            }
+
+        </script>
+        <button onclick = "MyPosition()">위치 추적 시작 </button>
+        <div id = "result"></div>
+    </body>
+</html>
+

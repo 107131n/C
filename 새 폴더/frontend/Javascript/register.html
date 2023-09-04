@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            <form name = "test" method = "post" action="test.html" onsubmit ="register()" onreset ="reWrite()" >
+                아이디:<input type = "text" name= "id" size = "20" value=""><p>
+                패스워드:<input type = "password" name= "pwd" size = "10" value=""><p>
+                <input type = "submit" name= "btn1" value = "등록하기">
+                <input type = "reset" name= "btn2" value="다시작성">
+                </form>
+            <script type = "text/javascript">
+                function register()
+                {
+                    document.test.submit();
+                    alert('회원 가입을 축하합니다.');
+                }
+                function reWrite()
+                {
+                    document.test.reset();
+                    alert("다시 입력하세요.");
+                }
+                
+            </script>
+        </body>
+     
+</html>

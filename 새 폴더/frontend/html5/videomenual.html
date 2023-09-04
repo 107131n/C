@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+    <body>
+        <video src = "stream.mp4" id = "vod"  type="video/mp4"></video>
+        <button onclick="vodPlay()">재생</button>
+        <button onclick="vodPause()">일시정지</button>
+        <br>
+        <div id = "time"></div><br>
+        볼륨: <input type = "range" id = "volumecontrol" max = "1" step = "any" onchange = "updateVolume()">
+        <script type =  "text/javascript">
+            var vod = document.getElementById("vod");
+            function vodPlay()
+            {
+                vod.play();
+            }
+            function vodPause()
+            {
+                vod.pause();
+            }
+            function updateVolume()
+            {
+                vod.volume = volumecontrol.value;
+            }
+
+            vod.addEventListener("timeupdate", function(){
+                document.getElementById("time").innerHTML = 
+                    Math.floor(vod.currentTime) + "/" +
+                    Math.floor(vod.duration) + "(초)";
+            });
+        </script>
+    </body>
+</html>
+
+

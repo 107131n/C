@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <meta charset = "utf-8">
+    </head>
+        <body>
+            
+
+            <h1>배경색으로 변경합니다.</h1>
+            <input type = "button" value = "red" id = "bgc" onClick = "
+                if(document.querySelector('#bgc').value == 'red')
+                {
+                    document.querySelector('body').style.backgroundColor = 'blue';
+                    document.querySelector('body').style.Color = 'yello';
+                    document.querySelector('#bgc').value = 'blue';
+                }
+                else
+                {
+                    document.querySelector('body').style.backgroundColor = 'red';
+                    document.querySelector('body').style.color = 'green';
+                    document.querySelector('#bgc').value = 'red';
+                }
+            ">
+            
+        </body>
+    
+</html>   
